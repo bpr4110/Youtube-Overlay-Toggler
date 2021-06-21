@@ -5,7 +5,7 @@ A simple javascript that helps you turn on/off the YouTube Video Progress/Toolba
 - Copy the following code to your browser's bookmark toolbar
 ```
 javascript: (function () {
-    var goaway = ".ytp-gradient-bottom,.ytp-gradient-top,.ytp-chrome-top,.ytp-chrome-bottom{display:none;}";
+    var goaway = ".ytp-gradient-bottom,.ytp-gradient-top,.ytp-chrome-top,.ytp-chrome-bottom,.ytp-ce-element{display:none;}";
     var inner = (typeof document.body.style.WebkitAppearance == "string") ? "innerText" : "innerHTML";
     var tags = document.getElementsByTagName("style");
     var shouldHide = true;
@@ -17,13 +17,13 @@ javascript: (function () {
     }
     if (shouldHide) {
         if ("\v" == "v") {
-            document.createStyleSheet().cssText = goaway
+            document.createStyleSheet().cssText = goaway;
         }
         else {
             var tag = document.createElement("style");
             tag.type = "text/css";
             document.getElementsByTagName("head")[0].appendChild(tag);
-            tag[inner] = goaway
+            tag[inner] = goaway;
         }
     }
 })();
